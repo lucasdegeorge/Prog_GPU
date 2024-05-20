@@ -1,3 +1,8 @@
+llama2_7b_onnx
+onnxoptimizer
+dump_llama.onnx
+optimized_llama.onnx
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
