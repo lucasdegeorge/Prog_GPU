@@ -1,6 +1,5 @@
 import contextlib
 import io
-import os
 import random
 import warnings
 
@@ -73,22 +72,10 @@ def get_llama_model(
     return LlamaModelWrapper(config), example_args_collection
 
 
-print("creation of the model.")
-model, example_args_collection = get_llama_model()
-print("done.")
-
-
-def export(model, args, filename):
+def export_model(model, args, filename):
     with contextlib.redirect_stdout(io.StringIO()):
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
             torch.onnx.export(
                 model, args, filename, input_names=["input", "mask"], opset_version=17
             )
-
-
-filename = "dump_llama.onnx"
-print(f"conversion to ONNX in file {filename!r}")
-export(model, example_args_collection[0], filename)
-print("done.")
-print(f"model size {os.stat(filename).st_size / 2**20} Mb.")

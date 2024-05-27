@@ -13,3 +13,8 @@ This work is done as part of the *"Parallel Programming for Machine Learning"* c
 
 ```bash
 pip install -r requirements.txt
+
+## Benchmark: 
+
+```bash
+python main
