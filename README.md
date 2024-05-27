@@ -13,8 +13,10 @@ This work is done as part of the *"Parallel Programming for Machine Learning"* c
 
 ```bash
 pip install -r requirements.txt
+```
 
-## Benchmark: 
+## How to benchmark:
 
 ```bash
-python main
+python main.py
+```
